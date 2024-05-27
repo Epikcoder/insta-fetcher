@@ -272,7 +272,20 @@ export class igApi {
 		const graphql: Graphql = res?.data;
 		return graphql.data?.user as UserGraphQlV2;
 	}
-
+	/**
+	 * hmmm..?
+	 * @param username 
+	 * @returns 
+	 */
+	public fetchUserV2test = async (username: username) => {
+		const res = await this.FetchIGAPI(
+			config.instagram_api_v1,
+			`/users/web_profile_info/?username=${username}`,
+			config.desktop,
+		);
+		const graphql: Graphql = res?.data;
+		return graphql.data?.user as UserGraphQlV2;
+	}
 	/**
 	 * simple method to check is user follow me
 	 * @param username 
